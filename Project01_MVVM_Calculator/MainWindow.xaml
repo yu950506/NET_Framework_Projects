@@ -1,0 +1,32 @@
+﻿<Window x:Class="Project01_MVVM_Calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        xmlns:viewModel ="clr-namespace:Project01_MVVM_Calculator.ViewModel"
+        Title="MainWindow" Height="450" Width="800" d:DataContext="{d:DesignInstance Type=viewModel:MainViewModel}">
+    <Grid>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <Label>值1</Label>
+                <TextBox Width="200" Height="20" Margin="10" Text="{Binding Input1}"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <Label>值2</Label>
+                <TextBox Width="200" Height="20" Margin="10" Text="{Binding Input2}"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <Label>结果</Label>
+                <TextBox Width="200" Height="20" Margin="10" Text="{Binding Result}"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="add" Margin="10" Width="100" Command="{Binding ButtonAddCommand}" />
+                <Button Content="sub" Margin="10" Width="100" Command="{Binding ButtonSubCommand}" />
+                <Button Content="mul" Margin="10" Width="100" Command="{Binding ButtonMulCommand}" />
+                <Button Content="div" Margin="10" Width="100" Command="{Binding ButtonDivCommand}" />
+            </StackPanel>
+            <TextBlock Text="{Binding Expression}" Background="Aquamarine"></TextBlock>
+        </StackPanel>
+    </Grid>
+</Window>

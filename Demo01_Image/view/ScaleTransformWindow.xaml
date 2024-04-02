@@ -1,0 +1,31 @@
+﻿<Window x:Class="WPF_Demo01_Image.view.ScaleTransformWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Demo01_Image.view"
+        mc:Ignorable="d"
+        Title="ScaleTransformWindow" Height="450" Width="800" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseWheel="Image_MouseWheel">
+    <Grid>
+        <!--<Image Source="/Image/desktop.png" Width="50" Height="50">
+            <Image.RenderTransform>
+                <ScaleTransform ScaleX="{Binding ElementName=slider, Path=Value}" ScaleY="{Binding ElementName=slider, Path=Value}" CenterX="150" CenterY="150">
+                </ScaleTransform>
+            </Image.RenderTransform>
+        </Image>
+        <Slider Minimum="0" Maximum="100" Width="Auto" Name="slider" Value="1"></Slider>
+        <TextBlock Text="{Binding ElementName=slider, Path=Value}" Margin="265,31,315,534" Width="200" Height="20" ></TextBlock>-->
+
+        <!--设置 Stretch 属性为 None，以确保图片不会被拉伸或缩放到填充整个控件-->
+        <!--您需要为图片添加鼠标点击事件的处理程序，以便在用户点击图片时获取点击的位置。您可以使用 MouseLeftButtonDown 事件-->
+        <Image x:Name="image" Source="/Image/desktop.png">
+            <Image.RenderTransform>
+                <ScaleTransform></ScaleTransform>
+            </Image.RenderTransform>
+        </Image>
+        <Canvas>
+            <Rectangle Width="50" Height="50" Canvas.Top="100" Canvas.Left="100" Stroke="Red" Name="rec">
+            </Rectangle>
+        </Canvas>
+    </Grid>
+</Window>
