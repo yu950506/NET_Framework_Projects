@@ -1,0 +1,59 @@
+﻿<Window x:Class="BoltViewSystem.View.BoltPositionDetailView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BoltViewSystem.View"
+            xmlns:viewmodel="clr-namespace:BoltViewSystem.ViewModel"
+        mc:Ignorable="d"
+        Title="BoltPositionDetailView" Height="600" Width="800" WindowStartupLocation="CenterScreen" d:DataContext="{d:DesignInstance Type=viewmodel:BoltPositionDetailViewModel}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="100"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="5" BorderThickness="1" BorderBrush="Black">
+            <StackPanel Orientation="Vertical">
+                <TextBlock FontSize="14" HorizontalAlignment="Center" Margin="5">
+                        <Run Text="吊具号：" />
+                        <Run Text="{Binding BoltPositionModel.LewNum}" />
+                        <Run Text="区域号：" />
+                        <Run Text="{Binding BoltPositionModel.AreaNum}" />
+                        <Run Text="螺栓号：" />
+                        <Run Text="{Binding BoltPositionModel.BoltNum}" />
+                        <Run Text="时间：" />
+                     <Run Text="{Binding BoltPositionModel.Time}" />
+                </TextBlock>
+                <TextBlock FontSize="14"  HorizontalAlignment="Center" Margin="5">
+                     <Run Text="中心位置像素横坐标：" />
+                     <Run Text="{Binding BoltPositionModel.RMid}" />
+                     <Run Text="中心位置像素纵坐标：" />
+                     <Run Text="{Binding BoltPositionModel.CMid}" />
+                </TextBlock>
+                <TextBlock FontSize="14"  HorizontalAlignment="Center" Margin="5">
+                    <Run Text="水平偏移量：" />
+                    <Run Text="{Binding BoltPositionModel.HvRMid}" />
+                    <Run Text="垂直偏移量：" />
+                    <Run Text="{Binding BoltPositionModel.HvCMid}" />
+                </TextBlock>
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="1" Grid.Column="0" Margin="5" BorderThickness="1" BorderBrush="Black">
+            <StackPanel>
+                <TextBlock Text="实时照片"  FontSize="14"  HorizontalAlignment="Center" Margin="5"></TextBlock>
+                <Image Source="{Binding ImageReality}"></Image>
+            </StackPanel>
+         
+        </Border>
+        <Border Grid.Row="1" Grid.Column="1" Margin="5" BorderThickness="1" BorderBrush="Black">
+            <StackPanel>
+                <TextBlock Text="模板照片"  FontSize="14"  HorizontalAlignment="Center" Margin="5"></TextBlock>
+                <Image Source="{Binding ImageTemplate}"></Image>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

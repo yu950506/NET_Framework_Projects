@@ -1,0 +1,21 @@
+﻿<Window x:Class="BoltViewSystem.View.BoltDetailView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BoltViewSystem.View"
+        mc:Ignorable="d"
+        Title="BoltDetailView" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <DataGrid Grid.Row="1" ItemsSource="{Binding ModelDataObservableCollection}" AutoGenerateColumns="False" CanUserAddRows ="False" CanUserDeleteRows ="False" IsReadOnly="True" CanUserSortColumns="True">
+            <DataGrid.Columns>
+                <!--<DataGridTextColumn Header="ID" Binding="{Binding ID}" />-->
+                <DataGridTextColumn Header="吊具号" Binding="{Binding Path=LewNum}" />
+                <DataGridTextColumn Header="区域号" Binding="{Binding Path=AreaNum}" />
+                <DataGridTextColumn Header="螺栓号" Binding="{Binding Path=BoltNum}" />
+                <DataGridTextColumn Header="是否合格" Binding="{Binding Path=Quality}" />
+                <DataGridTextColumn Header="时间" Binding="{Binding Path=Time}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

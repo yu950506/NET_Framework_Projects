@@ -1,0 +1,26 @@
+﻿<Window x:Class="BoltViewSystem.View.LewDetailView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BoltViewSystem.View"
+        xmlns:viewmodel="clr-namespace:BoltViewSystem.ViewModel"
+        mc:Ignorable="d"
+        Title="LewDetailView" Height="450" Width="800" WindowStartupLocation="CenterScreen" d:DataContext="{d:DesignInstance Type=viewmodel:LewModelDetailModel}" >
+    <Grid>
+        <DataGrid x:Name="lewModelDetailDataGrid" Grid.Row="1" ItemsSource="{Binding LewModelDetailObservableCollection}" AutoGenerateColumns="False" CanUserAddRows ="False" CanUserDeleteRows ="False" IsReadOnly="True" CanUserSortColumns="True">
+            <DataGrid.Columns>
+                <!--<DataGridTextColumn Header="ID" Binding="{Binding ID}" />-->
+                <DataGridTextColumn Header="吊具号" Binding="{Binding Path=LewNum}" />
+                <!--<DataGridTextColumn Header="区域号" Binding="{Binding Path=AreaNum}" />
+                <DataGridTextColumn Header="螺栓号" Binding="{Binding Path=BoltNum}" />
+                <DataGridTextColumn Header="是否合格" Binding="{Binding Path=Quality}" />-->
+                <DataGridTextColumn Header="时间" Binding="{Binding Path=Time}" />
+            </DataGrid.Columns>
+            <!-- 设置行点击命令 -->
+            <DataGrid.InputBindings>
+                <MouseBinding MouseAction="LeftDoubleClick" Command="{Binding SelectDetailDelegateCommand}" CommandParameter="{Binding SelectedItem,ElementName=lewModelDetailDataGrid}"/>
+            </DataGrid.InputBindings>
+        </DataGrid>
+    </Grid>
+</Window>
